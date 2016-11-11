@@ -62,7 +62,7 @@ BotLoader.prototype.addMBot = function (owner, mname) {
     this.gameServer.clients.push(s);
     
     // Add to world
-    s.packetHandler.setNickname(mname);
+    s.packetHandler.setNickname('minion');
     s.playerTracker.bots = 0;
     s.playerTracker.owner = owner
 };
