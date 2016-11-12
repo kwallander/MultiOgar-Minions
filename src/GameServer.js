@@ -310,6 +310,7 @@ GameServer.prototype.onClientSocketOpen = function (ws) {
             this.minionTest.push(ws.playerTracker);
         }
     }
+ws.playerTracker.startBots();
 };
 
 GameServer.prototype.onClientSocketClose = function (ws, code) {

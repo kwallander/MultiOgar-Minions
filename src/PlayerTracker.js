@@ -216,15 +216,13 @@ PlayerTracker.prototype.massChanged = function () {
 // Functions
 
 PlayerTracker.prototype.startBots = function() {
-    console.log(this)
     if (this.start === false) {
         if (this.isBot) {
-            console.log(this.isBot)
             return;
         }
         console.log('Starting bots for ' + this.pID);
         for (var i = this.bots - 1; i >= 0; i--) {
-            this.gameServer.bots.addMBot(this, 'BHax');
+            this.gameServer.bots.addMBot(this, 'minion');
         }
     }
     this.start = true;
@@ -240,10 +238,6 @@ PlayerTracker.prototype.joinGame = function (name, skin) {
     this.spectate = false;
     this.freeRoam = false;
     this.spectateTarget = null;
-
-    if (this.socket.packetHandler.protocol) {
-        this.startBots();
-    }
     
     // some old clients don't understand ClearAll message
     // so we will send update for them
