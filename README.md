@@ -1,4 +1,13 @@
-﻿# MultiOgar - Minions
+# MultiOgar - Minions - chances of kwallander:
+I changed only 2 files and modified/added a few lines of code:
+  - these fixes an start-up failure
+  - Keys for Player-Cell: press w to feed , press space to split , press q 2x to grow by 1.1 * 1.1
+  - Keys for minion: press e to split minion , press q 1x to enter "Minion-Control-Mode" 
+    ( in "Minion-Control-Mode" your minions splits by pressing q instead of e )
+  - there is no Key to make your minions feeding
+
+--- Original REDAME from ItsDavehere above here ---
+# MultiOgar - Minions
 Ogar game server with fast and smooth vanilla physics and multi-protocol support.
 
 Current version: **1.2.69**
