@@ -4,8 +4,9 @@ I changed only 2 files and modified 1 line of code / added a few lines of code:
   - fixes start-up failure
   - Keys for Player-Cell: press 'w' to feed , press 'space' to split , press 'q' 2x to grow by 1.1 * 1.1
   - Keys for minion: press 'e' to split minion , press 'q' 1x to enter "Minion-Control-Mode" 
-    ( in "Minion-Control-Mode" your minions splits by pressing 'q' instead of 'e' )
+    ( in "Minion-Control-Mode" your minions split by pressing 'q' instead of 'e' )
   - there is no Key to make your minions feeding (cause i didn't find all neccessary lines of code)
+  - i deployed MultiOgar-Minions using Cigar2/Cigar2 from github which is very easy (under linux put Cigar2 in /var/www/html/ and add the IP/Port of MultiOgar-Minions defined in gameserver.ini as option value to Cigar's index.html.
 
 --- Original REDAME from ItsDavehere above here ---
 # MultiOgar - Minions
