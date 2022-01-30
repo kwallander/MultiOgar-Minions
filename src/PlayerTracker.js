@@ -502,6 +502,9 @@ PlayerTracker.prototype.pressQ = function () {
         }
         this.spectateTarget = null;
     }
+    else if (this.gameServer.run) {
+        this.gameServer.increaseCell(this);
+    }
 };
 
 PlayerTracker.prototype.pressW = function () {
