@@ -271,7 +271,9 @@ GameServer.prototype.onClientSocketOpen = function (ws) {
     ws.remoteAddress = ws._socket.remoteAddress;
     ws.remotePort = ws._socket.remotePort;
     ws.lastAliveTime = Date.now();
-    Logger.write("CONNECTED    " + ws.remoteAddress + ":" + ws.remotePort + ", origin: \"" + ws.upgradeReq.headers.origin + "\"");
+    
+    //the following line was uncommented to avoid an error which prevents the server from starting up
+    //Logger.write("CONNECTED    " + ws.remoteAddress + ":" + ws.remotePort + ", origin: \"" + ws.upgradeReq.headers.origin + "\"");
     
     ws.playerTracker = new PlayerTracker(this, ws);
     ws.packetHandler = new PacketHandler(this, ws);
@@ -1370,7 +1372,19 @@ GameServer.prototype.shootVirus = function (parent, angle) {
         x: parent.position.x,
         y: parent.position.y,
     };
-    
+
+GameServer.prototype.increaseCell = function (client) {
+    for (var i = 0; i < client.cells.length; i++) {
+        var cell = client.cells[i];
+        
+        if (!cell) {
+            continue;
+        }
+        // Increase mass from parent cell first
+        var newsize = cell.getSize() * 1.1;      
+        cell.setSize(newsize);
+    }
+};    
     var newVirus = new Entity.Virus(this, null, parentPos, this.config.virusMinSize);
     newVirus.setBoost(780, angle);
     
